@@ -26,7 +26,9 @@ nav .cv-btn:hover {
     transform: scale(1.05);
 }
 
-nav a:hover {
+nav div a:hover {
+    border-radius: .5em;
+    background-color: #0000002c;
     transform: scale(1.02);
 }
 
