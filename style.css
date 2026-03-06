@@ -223,36 +223,57 @@ body {
     }
 
     .hero-heading .line {
+        font-family: "Titan One", sans-serif;
         letter-spacing: -2px;
-        font-size: clamp(2.2rem, 4.9vw, 5.8rem);
+        font-size: clamp(3.3rem, 4.9vw, 5.8rem);
         font-weight: 900;
     }
 
     .hero-heading .line1 {
-        font-family: "Titan One", sans-serif;
         width: min-content;
         -webkit-text-stroke: .1px rgb(0, 0, 0);
         color: transparent;
     }
 
     .hero-heading .line2 {
-        font-family: "Titan One", sans-serif;
         width: min-content;
-        color: #54889c9c;
+        color: #54889c;
+        -webkit-text-stroke: .05px rgba(0, 0, 0, 0.200);
     }
 
     .hero-heading .line3 {
-        font-family: "Titan One", sans-serif;
         width: min-content;
-        color: #3ebbeca2;
+        color: #3ebbec;
+        -webkit-text-stroke: .05px rgba(0, 0, 0, 0.200);
     }
 
+    .hero-heading .line::before {
+        content: attr(data-text);
+        font-size: 80%;
+        position: absolute;
+        -webkit-text-stroke: 0px rgba(0, 0, 0, 0.452);
+        color: #00000042;
+        filter: blur(2.5px);
+        pointer-events: none;
+    }
+
+    .hero-heading .line1::before {
+        transform: translateY(55%) translateX(26%) rotateX(80deg) scaleX(125%) scaleY(220%) skewX(-45deg);
+    }
+
+    .hero-heading .line2::before {
+        transform: translateY(49%) translateX(26%) rotateX(77deg) scaleX(125%) scaleY(220%) skewX(-45deg);
+    }
+
+    .hero-heading .line3::before {
+        transform: translateY(45%) translateX(38%) rotateX(77deg) scaleX(125%) scaleY(220%) skewX(-45deg);
+    }
 
     /* Nav */
 
     nav {
         grid-area: nav;
-        background-color: #88abb9;
+        background-color: #c2eeff81;
         display: flex;
         align-items: center;
         padding: 1rem 2rem;
@@ -465,8 +486,6 @@ body {
     }
 
 
-
-
     /* Footer */
 
     footer {
@@ -480,7 +499,7 @@ body {
         top: 20%;
         display: flex;
         flex-direction: column;
-        background-color: #88abb9;
+        background-color: #c2eeff81;
         padding: 1.5em .6em;
         border-bottom-right-radius: 1.5em;
         border-top-right-radius: 1.5em;
@@ -898,7 +917,6 @@ body {
     /* Footer  */
 
     footer {
-        color: white;
         grid-area: footer;
         display: flex;
         justify-content: center;
