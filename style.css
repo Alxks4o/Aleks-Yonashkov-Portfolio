@@ -390,23 +390,8 @@ body {
         display: flex;
         flex-direction: column;
         align-items: center;
-
-        animation: appear linear forwards;
-        animation-timeline: view();
-        animation-range: entry 0% cover 50%;
     }
 
-    @keyframes appear {
-        from {
-            opacity: 0;
-            transform: perspective(500px) translateY(60px) rotateY(40deg) rotateX(20deg);
-        }
-
-        to {
-            opacity: 1;
-            transform: perspective(500px) translateY(8px) rotateY(0deg) rotateX(0deg);
-        }
-    }
 
     .project-card h2 {
         padding: 1em;
@@ -577,7 +562,7 @@ body {
 
 
 
-    .hero-heading .line::before {
+    /* .hero-heading .line::before {
         content: attr(data-text);
         font-size: 1em;
         position: absolute;
@@ -598,7 +583,7 @@ body {
 
     .hero-heading .line3::before {
         transform: translateY(32%) translateX(13%) rotateX(83deg) scaleX(100%) scaleY(220%) skewX(-30deg);
-    }
+    } */
 
 
     /* Nav */
