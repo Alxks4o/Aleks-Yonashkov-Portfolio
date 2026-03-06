@@ -210,7 +210,8 @@ body {
 /* Desktop */
 
 @media only screen and (min-width: 850px) {
-    html {
+    html, body {
+        scrollbar-width: none;
         overflow-x: hidden;
     }
 
