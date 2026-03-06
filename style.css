@@ -15,6 +15,7 @@
     margin: 0;
 }
 
+
 .contact-form button:hover,
 main a:hover {
     background-color: #54889c;
@@ -153,14 +154,11 @@ body {
 }
 
 .circles li:nth-child(10) {
-    left: 85%;
     width: 150px;
     height: 150px;
     animation-delay: 0s;
     animation-duration: 11s;
 }
-
-
 
 
 @keyframes animate {
@@ -212,7 +210,9 @@ body {
 /* Desktop */
 
 @media only screen and (min-width: 850px) {
-
+    html {
+        overflow-x: hidden;
+    }
 
     /* Header */
     header {
@@ -545,9 +545,10 @@ body {
         grid-area: header;
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
+        justify-content: center;
         margin-top: 20%;
         overflow: hidden;
+        align-items: center;
     }
 
     .hero-heading {
@@ -787,52 +788,54 @@ body {
     }
 
 
-/* Projects Section Layout */
-.projects {
-    display: grid;
-    grid-template-columns: 100%;
-    gap: 2em;
-    padding: 10%;
-    margin-top: 20vh;
-    margin-bottom: 10vh;
-}
+    /* Projects Section Layout */
+    .projects {
+        display: grid;
+        grid-template-columns: 100%;
+        gap: 2em;
+        padding: 10%;
+        margin-top: 20vh;
+        margin-bottom: 10vh;
+    }
 
-/* Project Card Styling & Scroll Fade */
-.project-card {
-    background-color: #31addd;
-    border-radius: 0.5em;
-    width: 80%;
-    margin: 2vh auto; /* responsive margins */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    /* Project Card Styling & Scroll Fade */
+    .project-card {
+        background-color: #31addd;
+        border-radius: 0.5em;
+        width: 80%;
+        margin: 2vh auto;
+        /* responsive margins */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
-    opacity: 0; /* start hidden */
-    transform: perspective(500px) translateY(60px) rotateY(40deg) rotateX(20deg);
-    transition: transform 0.8s ease, opacity 0.8s ease;
-}
+        opacity: 0;
+        /* start hidden */
+        transform: perspective(500px) translateY(60px) rotateY(40deg) rotateX(20deg);
+        transition: transform 0.8s ease, opacity 0.8s ease;
+    }
 
-/* Visible when in viewport */
-.project-card.visible {
-    opacity: 1;
-    transform: perspective(500px) translateY(8px) rotateY(0deg) rotateX(0deg);
-}
+    /* Visible when in viewport */
+    .project-card.visible {
+        opacity: 1;
+        transform: perspective(500px) translateY(8px) rotateY(0deg) rotateX(0deg);
+    }
 
-/* Card Content */
-.project-card h2 {
-    padding: 1em;
-}
+    /* Card Content */
+    .project-card h2 {
+        padding: 1em;
+    }
 
-.project-card img,
-.project-card video {
-    width: 100%;
-    border-radius: 0.3em;
-}
+    .project-card img,
+    .project-card video {
+        width: 100%;
+        border-radius: 0.3em;
+    }
 
-.project-card a {
-    width: 50%;
-    margin: 2em 0;
-}
+    .project-card a {
+        width: 50%;
+        margin: 2em 0;
+    }
 
     /* Contact Form (Main)*/
 
