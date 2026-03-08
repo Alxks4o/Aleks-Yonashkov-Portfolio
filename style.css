@@ -985,7 +985,6 @@ body {
 
     /* Grid Layout */
     body {
-        background-color: #afc3cb;
         font-weight: 400;
         display: grid;
         grid-template-columns: 100%;
