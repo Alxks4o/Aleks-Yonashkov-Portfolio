@@ -15,7 +15,6 @@
     margin: 0;
 }
 
-
 .contact-form button:hover,
 main a:hover {
     background-color: #54889c;
@@ -43,7 +42,7 @@ footer a:hover {
 .hero-heading .line1 {
     width: min-content;
     -webkit-text-stroke: .1px rgb(0, 0, 0);
-    color: #00000027;
+    color: #0000005d;
 }
 
 .hero-heading .line2 {
@@ -54,15 +53,11 @@ footer a:hover {
 
 .hero-heading .line3 {
     width: min-content;
-    color: #3ebbece1;
+    color: #3ebbecf6;
     -webkit-text-stroke: .05px rgba(0, 0, 0, 0.200);
 }
 
 /* Animated Background */
-
-body {
-    overflow-x: hidden;
-}
 
 .circles {
     position: fixed;
@@ -70,7 +65,6 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    overflow: hidden;
     z-index: -1;
 }
 
@@ -81,7 +75,7 @@ body {
     width: 20px;
     height: 20px;
     background: rgba(224, 249, 255, 0.26);
-    animation: animate 25s linear infinite;
+    animation: animate-blobs 25s linear infinite;
     bottom: -10rem;
 }
 
@@ -154,6 +148,7 @@ body {
 }
 
 .circles li:nth-child(10) {
+    left: 85%;
     width: 150px;
     height: 150px;
     animation-delay: 0s;
@@ -161,7 +156,8 @@ body {
 }
 
 
-@keyframes animate {
+
+@keyframes animate-blobs {
     0% {
         transform: translateY(0) rotate(0deg);
         opacity: 1;
@@ -186,8 +182,8 @@ body {
 /* Gradient Background Animation */
 
 body {
-    background: linear-gradient(135deg, #2d3e42, #82c9ff, #cfc9e6);
-    background-size: 180% 180%;
+    background: linear-gradient(115deg, #2f4347, #8fcdfdde, #94a5f3, #d5b4f5);
+    background-size: 300% 300%;
     animation: gradient-animation 6s ease infinite;
 }
 
@@ -210,17 +206,15 @@ body {
 /* Desktop */
 
 @media only screen and (min-width: 850px) {
-    html, body {
-        scrollbar-width: none;
-        overflow-x: hidden;
-    }
 
     /* Header */
     header {
         grid-area: header;
         display: flex;
         flex-direction: column;
+        overflow: hidden;
         justify-content: flex-start;
+        width: 100%;
         margin-top: 20%;
     }
 
@@ -228,8 +222,8 @@ body {
         position: relative;
         width: min-content;
         line-height: 0.85;
+        padding: 1em;
         text-transform: uppercase;
-        position: relative;
         color: #000;
         display: flex;
         flex-direction: column;
@@ -238,10 +232,11 @@ body {
         transform: perspective(500px) translateY(8px) rotateY(-25deg);
     }
 
+
     .hero-heading .line {
         font-family: "Titan One", sans-serif;
         letter-spacing: -2px;
-        font-size: clamp(3.3rem, 4.9vw, 5.8rem);
+        font-size: clamp(3.3rem, 4.9vw, 5.1rem);
         font-weight: 900;
     }
 
@@ -258,15 +253,15 @@ body {
     }
 
     .hero-heading .line1::before {
-        transform: translateY(55%) translateX(26%) rotateX(80deg) scaleX(125%) scaleY(220%) skewX(-45deg);
+        transform: translateY(55%) translateX(25%) rotateX(80deg) scaleX(125%) scaleY(220%) skewX(-45deg);
     }
 
     .hero-heading .line2::before {
-        transform: translateY(49%) translateX(26%) rotateX(77deg) scaleX(125%) scaleY(220%) skewX(-45deg);
+        transform: translateY(55%) translateX(25%) rotateX(80deg) scaleX(125%) scaleY(220%) skewX(-45deg);
     }
 
     .hero-heading .line3::before {
-        transform: translateY(45%) translateX(38%) rotateX(77deg) scaleX(125%) scaleY(220%) skewX(-45deg);
+        transform: translateY(53%) translateX(36%) rotateX(80deg) scaleX(125%) scaleY(220%) skewX(-45deg);
     }
 
     /* Nav */
@@ -321,12 +316,60 @@ body {
     /* Main */
 
     main {
-        color: white;
         grid-area: main;
         min-height: 100vh;
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
+        align-items: center;
+    }
+
+
+    .report {
+        background-color: rgb(255, 255, 255);
+        width: 80%;
+        margin: 10%;
+        margin-left: 20%;
+        display: flex;
+        flex-direction: column;
+        border-radius: .5em;
+        box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    }
+
+    .report a {
+        padding: 0;
+        margin: 0;
+        background-color: transparent;
+        color: rgba(0, 0, 255, 0.74);
+        border: none;
+        border-radius: 0;
+        font-weight: bold;
+        cursor: pointer;
+        text-decoration: underline;
+        text-transform: none;
+    }
+
+    .report a:hover {
+          background-color: transparent;
+    transform: scale(1);
+    }
+
+    .report p {
+        padding: 0% 10%;
+        margin-bottom: 5%;
+    }
+
+    .report h2 {
+        color: #0e1011;
+        text-align: center;
+        font-size: 2.5em;
+        padding: 1.5em;
+    }
+
+    .report h3 {
+        color: #2F5496;
+        padding: 1% 10%;
+        margin-top: 4em;
+        font-size: 1.5em;
     }
 
 
@@ -340,7 +383,7 @@ body {
         padding: 10%;
         border-radius: .5em;
         width: 50%;
-        margin: 30% 10%;
+        margin: 30% 20%;
         height: fit-content;
 
         display: flex;
@@ -376,7 +419,6 @@ body {
         grid-template-columns: 100%;
         gap: 2em;
         padding: 10%;
-        margin-top: 20vh;
         margin-bottom: 10vh;
     }
 
@@ -385,13 +427,28 @@ body {
         border-radius: .5em;
         width: 80%;
         margin: 5%;
-        margin-top: 25%;
+        margin-top: 35%;
 
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        animation: appear linear forwards;
+        animation-timeline: view();
+        animation-range: entry 0% cover 45%;
     }
 
+    @keyframes appear {
+        from {
+            opacity: 0;
+            transform: perspective(500px) translateY(60px) rotateY(40deg) rotateX(20deg);
+        }
+
+        to {
+            opacity: 1;
+            transform: perspective(500px) translateY(8px) rotateY(0deg) rotateX(0deg);
+        }
+    }
 
     .project-card h2 {
         padding: 1em;
@@ -401,6 +458,7 @@ body {
     .project-card video {
         width: 100%;
         border-radius: 0.3em;
+        pointer-events: none;
     }
 
     .project-card a {
@@ -556,13 +614,13 @@ body {
     .hero-heading .line {
         font-family: "Titan One", sans-serif;
         letter-spacing: -2px;
-        font-size: clamp(3rem, 6vw, 5rem);
+        font-size: clamp(2.8rem, 9vw, 5rem);
         font-weight: 900;
     }
 
 
 
-    /* .hero-heading .line::before {
+    .hero-heading .line::before {
         content: attr(data-text);
         font-size: 1em;
         position: absolute;
@@ -583,7 +641,7 @@ body {
 
     .hero-heading .line3::before {
         transform: translateY(32%) translateX(13%) rotateX(83deg) scaleX(100%) scaleY(220%) skewX(-30deg);
-    } */
+    }
 
 
     /* Nav */
@@ -774,54 +832,74 @@ body {
     }
 
 
-    /* Projects Section Layout */
+
+    /* Projects Cards (Main)*/
     .projects {
         display: grid;
         grid-template-columns: 100%;
         gap: 2em;
         padding: 10%;
+        justify-items: center;
         margin-top: 20vh;
         margin-bottom: 10vh;
     }
 
-    /* Project Card Styling & Scroll Fade */
     .project-card {
         background-color: #31addd;
-        border-radius: 0.5em;
+        border-radius: .5em;
         width: 80%;
-        margin: 2vh auto;
-        /* responsive margins */
+        margin: 5%;
+        margin-top: 20%;
+
         display: flex;
         flex-direction: column;
         align-items: center;
 
-        opacity: 0;
-        /* start hidden */
-        transform: perspective(500px) translateY(60px) rotateY(40deg) rotateX(20deg);
-        transition: transform 0.8s ease, opacity 0.8s ease;
+        animation: appear linear forwards;
+        animation-timeline: view();
+        animation-range: entry 0% cover 50%;
     }
 
-    /* Visible when in viewport */
-    .project-card.visible {
-        opacity: 1;
-        transform: perspective(500px) translateY(8px) rotateY(0deg) rotateX(0deg);
+    @keyframes appear {
+        from {
+            opacity: 0;
+            transform: perspective(500px) translateY(60px) rotateY(40deg) rotateX(20deg);
+        }
+
+        to {
+            opacity: 1;
+            transform: perspective(500px) translateY(8px) rotateY(0deg) rotateX(0deg);
+        }
     }
 
-    /* Card Content */
     .project-card h2 {
         padding: 1em;
     }
 
     .project-card img,
     .project-card video {
+        pointer-events: none;
         width: 100%;
         border-radius: 0.3em;
     }
 
     .project-card a {
         width: 50%;
-        margin: 2em 0;
+        margin: 2em;
+        padding: 0.8em 1.5em;
+        margin-top: 1em;
+        background-color: #0e1011;
+        color: #f5f5f5;
+        border: none;
+        border-radius: 0.4em;
+        font-weight: 700;
+        cursor: pointer;
+        text-transform: uppercase;
+        text-align: center;
+        transition: transform 0.2s, background-color 0.3s;
     }
+
+
 
     /* Contact Form (Main)*/
 
@@ -843,6 +921,10 @@ body {
         flex-direction: column;
         gap: 1.5em;
         color: #0e1011;
+    }
+
+    .contact-form h2 {
+        text-align: center;
     }
 
     form label {
