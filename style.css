@@ -677,31 +677,6 @@ body {
 
 
 
-    .hero-heading .line::before {
-        content: attr(data-text);
-        font-size: 1em;
-        position: absolute;
-        -webkit-text-stroke: 0px rgb(0, 0, 0);
-        color: #00000059;
-        filter: blur(3.5px);
-        pointer-events: none;
-        z-index: -1;
-    }
-
-    .hero-heading .line1::before {
-        transform: translateY(34%) translateX(8%) rotateX(83deg) scaleX(100%) scaleY(220%) skewX(-30deg);
-    }
-
-    .hero-heading .line2::before {
-        transform: translateY(33%) translateX(9%) rotateX(83deg) scaleX(100%) scaleY(220%) skewX(-30deg);
-    }
-
-    .hero-heading .line3::before {
-        transform: translateY(32%) translateX(13%) rotateX(83deg) scaleX(100%) scaleY(220%) skewX(-30deg);
-    }
-
-
-
     /* Nav */
     nav {
         grid-area: nav;
