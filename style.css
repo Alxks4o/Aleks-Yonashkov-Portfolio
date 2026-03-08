@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Londrina+Outline&family=Titan+One&display=swap');
 
 
-/* Universal styles */
+/* Universal Styles */
 
 * {
     font-family: 'Poppins', sans-serif;
@@ -11,6 +11,118 @@
 }
 
 
+
+/* Form */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+form label {
+    margin-top: 1em;
+}
+
+.contact-form {
+    background: #31addd;
+    padding: 3em;
+    width: 50%;
+    margin: 20% 10%;
+    border-radius: 0.8em;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 10px 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    color: #0e1011;
+}
+
+.contact-form h2 {
+    text-align: center;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    min-width: 100%;
+    max-width: min-content;
+    padding: 0.7em 1em;
+    border: 1px solid #0e1011;
+    border-radius: .3em;
+    font-size: 1em;
+    outline: none;
+    transition: border-color .3s, box-shadow .3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #54889c;
+    box-shadow: 0 0 10px rgba(84, 136, 156, 0.3);
+}
+
+
+
+/* Projects Cards */
+.project-card {
+    background-color: #31addd;
+    border-radius: .5em;
+    width: 100%;
+    height: 80%;
+    margin: 5%;
+    margin-top: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+
+    animation: appear linear forwards;
+    animation-timeline: view();
+    animation-range: entry 0% cover 45%;
+}
+
+
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.project-card img,
+.project-card video {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 0.3em;
+    pointer-events: none;
+}
+
+.project-card h2 {
+    padding: 1em;
+    text-align: center;
+}
+
+.project-card a {
+    text-align: center;
+    width: 30%;
+    margin: 2em;
+}
+
+main>h2 {
+    position: absolute;
+    left: -9999px;
+}
+
+
+
+
+/* Button Styles  */
 .contact-form button,
 main a,
 .report .video-link {
@@ -27,11 +139,10 @@ main a,
     transition: transform 0.2s, background-color 0.3s;
 }
 
-
-
 .contact-form>button:hover,
 main>a:hover,
-.report .video-link:hover {
+.report .video-link:hover,
+.project-card a:hover {
     background-color: #54889c;
     transform: scale(1.05);
 }
@@ -54,6 +165,7 @@ footer a:hover {
 
 
 
+/* Header Styles */
 .hero-heading .line1 {
     width: min-content;
     -webkit-text-stroke: .1px rgb(0, 0, 0);
@@ -72,8 +184,9 @@ footer a:hover {
     -webkit-text-stroke: .05px rgba(0, 0, 0, 0.200);
 }
 
-/* Animated Background */
 
+
+/* Animated Blobs Background */
 .circles {
     position: fixed;
     top: 0;
@@ -195,7 +308,6 @@ footer a:hover {
 
 
 /* Gradient Background Animation */
-
 body {
     background: linear-gradient(115deg, #2f4347, #8fcdfdde, #94a5f3, #d5b4f5);
     background-size: 300% 300%;
@@ -236,6 +348,7 @@ body {
         width: 100%;
         margin-top: 20%;
     }
+
 
 
     /* Big Heading */
@@ -288,7 +401,6 @@ body {
 
 
     /* Nav */
-
     nav {
         grid-area: nav;
         background-color: #c2eeff81;
@@ -335,9 +447,7 @@ body {
 
 
 
-
     /* Main */
-
     main {
         grid-area: main;
         min-height: 100vh;
@@ -345,6 +455,17 @@ body {
         flex-direction: column;
         align-items: center;
     }
+
+
+
+    /* Projects Cards */
+    .projects {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2em;
+        margin-bottom: 20rem;
+    }
+
 
 
     /* Report */
@@ -371,7 +492,6 @@ body {
         text-decoration: underline;
         text-transform: none;
     }
-
 
     .report-images {
         display: flex;
@@ -424,8 +544,8 @@ body {
     }
 
 
-    /* Homepage card */
 
+    /* Homepage card */
     main>div {
         background-color: #31addd;
         box-shadow: rgba(0, 0, 0, 0.1) -2px 2px 1px, rgba(0, 0, 0, 0.1) -4px 4px 2px, rgba(0, 0, 0, 0.1) -8px 8px 4px, rgba(0, 0, 0, 0.1) -16px 16px 8px, rgba(0, 0, 0, 0.1) -32px 32px 16px;
@@ -462,116 +582,14 @@ body {
 
 
 
-
-    /* Projects Cards (Main)*/
-    .projects {
-        display: grid;
-        grid-template-columns: 100%;
-        gap: 2em;
-        padding: 10%;
-        margin-bottom: 10vh;
-    }
-
-    .project-card {
-        background-color: #31addd;
-        border-radius: .5em;
-        width: 80%;
-        margin: 5%;
-        margin-top: 35%;
-
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        animation: appear linear forwards;
-        animation-timeline: view();
-        animation-range: entry 0% cover 45%;
-    }
-
-    @keyframes appear {
-        from {
-            opacity: 0;
-            transform: perspective(500px) translateY(60px) rotateY(40deg) rotateX(20deg);
-        }
-
-        to {
-            opacity: 1;
-            transform: perspective(500px) translateY(8px) rotateY(0deg) rotateX(0deg);
-        }
-    }
-
-    .projects>h2 {
-        position: absolute;
-        left: -9999px;
-    }
-
-    .project-card h2 {
-        padding: 1em;
-    }
-
-    .project-card img,
-    .project-card video {
-        width: 100%;
-        border-radius: 0.3em;
-        pointer-events: none;
-    }
-
-    .project-card a {
-        width: 50%;
-        margin: 2em;
-    }
-
-
-
-    /* Contact Form (Main)*/
-
-    form {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-    }
-
+    /* Contact Form */
     .contact-form {
-        background: #31addd;
-        padding: 3em;
-        margin: 20% 10%;
         width: 50%;
-        border-radius: 0.8em;
-        box-shadow: rgba(0, 0, 0, 0.2) 0 10px 25px;
-        display: flex;
-        flex-direction: column;
-        gap: 1.5em;
-        color: #0e1011;
-    }
-
-    form label {
-        margin-top: 1em;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-        width: 100%;
-        min-width: 100%;
-        max-width: min-content;
-        padding: 0.7em 1em;
-        border: 1px solid #0e1011;
-        border-radius: .3em;
-        font-size: 1em;
-        outline: none;
-        transition: border-color .3s, box-shadow .3s;
-    }
-
-    .contact-form input:focus,
-    .contact-form textarea:focus {
-        border-color: #54889c;
-        box-shadow: 0 0 10px rgba(84, 136, 156, 0.3);
     }
 
 
 
     /* Footer */
-
     footer {
         grid-area: footer;
         min-height: 100vh;
@@ -600,8 +618,7 @@ body {
 
 
 
-    /* Grid Layout (Body) */
-
+    /* Grid Layout */
     body {
         font-weight: 400;
         display: grid;
@@ -622,7 +639,6 @@ body {
 
 
 /* Mobile */
-
 @media only screen and (max-width:850px) {
 
     /* Header */
@@ -658,11 +674,35 @@ body {
         font-size: clamp(2.8rem, 9vw, 5rem);
         font-weight: 900;
     }
-    
+
+
+
+    .hero-heading .line::before {
+        content: attr(data-text);
+        font-size: 1em;
+        position: absolute;
+        -webkit-text-stroke: 0px rgb(0, 0, 0);
+        color: #00000059;
+        filter: blur(3.5px);
+        pointer-events: none;
+        z-index: -1;
+    }
+
+    .hero-heading .line1::before {
+        transform: translateY(34%) translateX(8%) rotateX(83deg) scaleX(100%) scaleY(220%) skewX(-30deg);
+    }
+
+    .hero-heading .line2::before {
+        transform: translateY(33%) translateX(9%) rotateX(83deg) scaleX(100%) scaleY(220%) skewX(-30deg);
+    }
+
+    .hero-heading .line3::before {
+        transform: translateY(32%) translateX(13%) rotateX(83deg) scaleX(100%) scaleY(220%) skewX(-30deg);
+    }
+
 
 
     /* Nav */
-
     nav {
         grid-area: nav;
         background-color: #88abb9;
@@ -713,9 +753,7 @@ body {
 
 
 
-
     /* Default state */
-
     #clicked {
         background-color: #88abb9;
         display: flex;
@@ -748,8 +786,8 @@ body {
     }
 
 
-    /* #clicked is targeted */
 
+    /* #clicked is targeted */
     #clicked:target {
         display: flex;
         flex-direction: column;
@@ -770,6 +808,7 @@ body {
     #clicked:target~.expandNav {
         display: none;
     }
+
 
 
     /* BURGER ICON */
@@ -796,9 +835,7 @@ body {
 
 
 
-
     /* Main  */
-
     main {
         grid-area: main;
         min-height: 70vh;
@@ -808,8 +845,8 @@ body {
     }
 
 
-    /* Report */
 
+    /* Report */
     .report {
         background-color: rgb(255, 255, 255);
         width: 80%;
@@ -880,6 +917,8 @@ body {
     }
 
 
+
+    /* Homepage Card */
     main>div {
         background-color: #31addd;
         box-shadow: rgba(0, 0, 0, 0.1) -2px 2px 1px, rgba(0, 0, 0, 0.1) -4px 4px 2px, rgba(0, 0, 0, 0.1) -8px 8px 4px, rgba(0, 0, 0, 0.1) -16px 16px 8px, rgba(0, 0, 0, 0.1) -32px 32px 16px;
@@ -911,7 +950,6 @@ body {
         transition: transform 0.2s, background-color 0.3s;
     }
 
-
     main h2 {
         text-transform: capitalize;
         color: #0e1011;
@@ -923,127 +961,22 @@ body {
 
 
 
-    /* Projects Cards (Main)*/
+    /* Projects Cards */
     .projects {
-        display: grid;
-        grid-template-columns: 100%;
-        gap: 2em;
-        padding: 10%;
-        justify-items: center;
-        margin-top: 20vh;
-        margin-bottom: 10vh;
-    }
-
-    .project-card {
-        background-color: #31addd;
-        border-radius: .5em;
+        grid-template-columns: repeat(1, 1fr);
         width: 80%;
-        margin: 5%;
-        margin-top: 20%;
-
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        animation: appear linear forwards;
-        animation-timeline: view();
-        animation-range: entry 0% cover 50%;
-    }
-
-    @keyframes appear {
-        from {
-            opacity: 0;
-            transform: perspective(500px) translateY(60px) rotateY(40deg) rotateX(20deg);
-        }
-
-        to {
-            opacity: 1;
-            transform: perspective(500px) translateY(8px) rotateY(0deg) rotateX(0deg);
-        }
-    }
-
-    .project-card h2 {
-        padding: 1em;
-    }
-
-    .project-card img,
-    .project-card video {
-        pointer-events: none;
-        width: 100%;
-        border-radius: 0.3em;
-    }
-
-    .project-card a {
-        width: 50%;
-        margin: 2em;
-        padding: 0.8em 1.5em;
-        margin-top: 1em;
-        background-color: #0e1011;
-        color: #f5f5f5;
-        border: none;
-        border-radius: 0.4em;
-        font-weight: 700;
-        cursor: pointer;
-        text-transform: uppercase;
-        text-align: center;
-        transition: transform 0.2s, background-color 0.3s;
     }
 
 
 
-    /* Contact Form (Main)*/
-
-    form {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-    }
-
+    /* Contact Form */
     .contact-form {
-        background: #31addd;
-        padding: 3em;
-        width: 50%;
-        margin: 20% 10%;
-        border-radius: 0.8em;
-        box-shadow: rgba(0, 0, 0, 0.2) 0 10px 25px;
-        display: flex;
-        flex-direction: column;
-        gap: 1.5em;
-        color: #0e1011;
-    }
-
-    .contact-form h2 {
-        text-align: center;
-    }
-
-    form label {
-        margin-top: 1em;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-        width: 100%;
-        min-width: 100%;
-        max-width: min-content;
-        padding: 0.7em 1em;
-        border: 1px solid #0e1011;
-        border-radius: .3em;
-        font-size: 1em;
-        outline: none;
-        transition: border-color .3s, box-shadow .3s;
-    }
-
-    .contact-form input:focus,
-    .contact-form textarea:focus {
-        border-color: #54889c;
-        box-shadow: 0 0 10px rgba(84, 136, 156, 0.3);
+        width: 90%;
     }
 
 
 
     /* Footer  */
-
     footer {
         grid-area: footer;
         display: flex;
@@ -1075,7 +1008,7 @@ body {
 
 
 
-    /* Grid Layout (Body) */
+    /* Grid Layout */
     body {
         background-color: #afc3cb;
         font-weight: 400;
@@ -1106,4 +1039,3 @@ body {
 --secondary: #afc3cb;
 --accent: #88abb9;
  */
-
