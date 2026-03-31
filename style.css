@@ -10,6 +10,13 @@
     margin: 0;
 }
 
+/* Video Div */
+.main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
 
 /* Form */
@@ -63,8 +70,8 @@ form label {
 
 
 /* Projects Cards */
-.project-card {
-    background-color: #31addd;
+.projects div {
+    background-color: #31acddc9;
     border-radius: .5em;
     width: 100%;
     height: 80%;
@@ -94,8 +101,8 @@ form label {
     }
 }
 
-.project-card img,
-.project-card video {
+.projects div img,
+.projects div video {
     width: 100%;
     aspect-ratio: 16 / 9;
     object-fit: cover;
@@ -103,12 +110,12 @@ form label {
     pointer-events: none;
 }
 
-.project-card h2 {
+.projects div h2 {
     padding: 1em;
     text-align: center;
 }
 
-.project-card a {
+.projects div a {
     text-align: center;
     width: 30%;
     margin: 2em;
@@ -336,7 +343,7 @@ body {
 
 /* Desktop */
 
-@media only screen and (min-width: 850px) {
+@media only screen and (min-width: 1000px) {
 
     /* Header */
     header {
@@ -448,7 +455,7 @@ body {
 
 
     /* Main */
-    main {
+    .main {
         grid-area: main;
         min-height: 100vh;
         display: flex;
@@ -465,6 +472,7 @@ body {
         gap: 2em;
         margin-bottom: 20rem;
     }
+
 
 
 
@@ -545,8 +553,8 @@ body {
 
 
 
-    /* Homepage card */
-    main>div {
+    /* mainpage card */
+    .main>div {
         background-color: #31addd;
         box-shadow: rgba(0, 0, 0, 0.1) -2px 2px 1px, rgba(0, 0, 0, 0.1) -4px 4px 2px, rgba(0, 0, 0, 0.1) -8px 8px 4px, rgba(0, 0, 0, 0.1) -16px 16px 8px, rgba(0, 0, 0, 0.1) -32px 32px 16px;
 
@@ -565,17 +573,17 @@ body {
         transition: transform .3s ease-in-out, box-shadow .3s ease-in-out;
     }
 
-    main h2 {
+    .main h2 {
         text-transform: capitalize;
         color: #0e1011;
     }
 
-    main p {
+    .main p {
         color: #0e1011;
         padding: 10%;
     }
 
-    main>div:hover {
+    .main>div:hover {
         box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
         transform: perspective(500px) translateY(8px) rotateY(0deg) rotateX(0deg);
     }
@@ -639,7 +647,7 @@ body {
 
 
 /* Mobile */
-@media only screen and (max-width:850px) {
+@media only screen and (max-width:1000px) {
 
     /* Header */
     header {
@@ -673,6 +681,31 @@ body {
         letter-spacing: -2px;
         font-size: clamp(2.8rem, 9vw, 5rem);
         font-weight: 900;
+    }
+
+
+
+    .hero-heading .line::before {
+        content: attr(data-text);
+        font-size: 1em;
+        position: absolute;
+        -webkit-text-stroke: 0px rgb(0, 0, 0);
+        color: #00000059;
+        filter: blur(3.5px);
+        pointer-events: none;
+        z-index: -1;
+    }
+
+    .hero-heading .line1::before {
+        transform: translateY(34%) translateX(8%) rotateX(83deg) scaleX(100%) scaleY(220%) skewX(-30deg);
+    }
+
+    .hero-heading .line2::before {
+        transform: translateY(33%) translateX(9%) rotateX(83deg) scaleX(100%) scaleY(220%) skewX(-30deg);
+    }
+
+    .hero-heading .line3::before {
+        transform: translateY(32%) translateX(13%) rotateX(83deg) scaleX(100%) scaleY(220%) skewX(-30deg);
     }
 
 
@@ -808,10 +841,15 @@ body {
         border-top: .3em solid #fff;
     }
 
-
-
-    /* Main  */
+    /* Main */
     main {
+        grid-area: main;
+        display: flex;
+        justify-content: center;
+    }
+
+    /* Index  */
+    .main {
         grid-area: main;
         min-height: 70vh;
         display: flex;
@@ -893,8 +931,8 @@ body {
 
 
 
-    /* Homepage Card */
-    main>div {
+    /* mainpage Card */
+    .main>div{
         background-color: #31addd;
         box-shadow: rgba(0, 0, 0, 0.1) -2px 2px 1px, rgba(0, 0, 0, 0.1) -4px 4px 2px, rgba(0, 0, 0, 0.1) -8px 8px 4px, rgba(0, 0, 0, 0.1) -16px 16px 8px, rgba(0, 0, 0, 0.1) -32px 32px 16px;
         padding: 10%;
@@ -908,7 +946,7 @@ body {
         align-items: center;
     }
 
-    main>a {
+    .main>a {
         width: 50%;
         margin: 2em;
         padding: 0.8em 1.5em;
@@ -925,12 +963,12 @@ body {
         transition: transform 0.2s, background-color 0.3s;
     }
 
-    main h2 {
+    .main h2 {
         text-transform: capitalize;
         color: #0e1011;
     }
 
-    main p {
+    .main p {
         color: #0e1011;
     }
 
@@ -938,10 +976,18 @@ body {
 
     /* Projects Cards */
     .projects {
+        grid-area: main;
         grid-template-columns: repeat(1, 1fr);
-        width: 80%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 10% 0;
     }
 
+    .projects div{
+        width: 80%;
+    }
 
 
     /* Contact Form */
@@ -985,7 +1031,7 @@ body {
 
     /* Grid Layout */
     body {
-        background-color: #88abb9;
+        background-color: #afc3cb;
         font-weight: 400;
         display: grid;
         grid-template-columns: 100%;
